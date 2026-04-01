@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Aura Gifts | Turning Moments into Magical Memories</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* =========================================
+           CSS VARIABLES & RESET
+           ========================================= */
+        :root {
+            --lavender: #E6E6FA;
+            --lavender-dark: #D8BFD8;
+            --blush: #FFE4E1;
+            --blush-deep: #FFB6C1;
+            --gold: #D4AF37;
+            --gold-light: #F4E4BC;
+            --text-dark: #2C2C2C;
+            --text-light: #666;
+            --white: #FFFFFF;
+            --cream: #FFFAF0;
+            --shadow: rgba(0, 0, 0, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--cream);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
+
+        /* =========================================
+           SPARKLE ANIMATION BACKGROUND
+           ========================================= */
+        .sparkles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            overflow: hidden;
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: radial-gradient(circle, var(--gold) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: sparkle 3s infinite;
+            opacity: 0;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+
+        /* =========================================
+           NAVIGATION
+           ========================================= */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px var(--shadow);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo i {
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), var(--blush-deep));
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-dark);
+        }
+
+        /* =========================================
+           HERO SECTION
+           ========================================= */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--lavender) 0%, var(--blush) 50%, var(--cream) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 6rem 2rem 4rem;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 182, 193, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-20px) scale(1.05); }
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            z-index: 1;
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--text-dark), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, var(--gold), #B8860B);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(212, 175, 55, 0.5);
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        /* =========================================
+           SECTION STYLES
+           ========================================= */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), var(--blush-deep));
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        /* =========================================
+           ABOUT SECTION
+           ========================================= */
+        .about {
+            background: var(--white);
+            border-radius: 30px;
+            margin: 2rem auto;
+            box-shadow: 0 10px 40px var(--shadow);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .about-text p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px var(--shadow);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: 10px;
+            bottom: 10px;
+            border: 2px solid var(--gold);
+            border-radius: 20px;
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        /* =========================================
+           PRODUCTS SECTION
+           ========================================= */
+        .products {
+            background: linear-gradient(to bottom, var(--cream), var(--white));
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px var(--shadow);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);
+        }
+
+        .product-image {
+            position: relative;
+            overflow: hidden;
+            height: 250px;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: linear-gradient(135deg, var(--gold), #B8860B);
+            color: var(--white);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .product-info p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-price {
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        /* =========================================
+           GALLERY SECTION
+           ========================================= */
+        .gallery {
+            background: var(--white);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            height: 300px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px var(--shadow);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(212, 175, 55, 0.8), transparent);
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding: 2rem;
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay h4 {
+            color: var(--white);
+            font-size: 1.3rem;
+            transform: translateY(20px);
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay h4 {
+            transform: translateY(0);
+        }
+
+        /* =========================================
+           TESTIMONIALS SECTION
+           ========================================= */
+        .testimonials {
+            background: linear-gradient(135deg, var(--lavender) 0%, var(--blush) 100%);
+            border-radius: 30px;
+            margin: 2rem auto;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px var(--shadow);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--gold);
+            opacity: 0.3;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .testimonial-text {
+            color: var(--text-light);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold), var(--blush-deep));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        .author-info h4 {
+            color: var(--text-dark);
+            font-size: 1.1rem;
+        }
+
+        .author-info .stars {
+            color: var(--gold);
+            font-size: 0.9rem;
+        }
+
+        /* =========================================
+           CONTACT SECTION
+           ========================================= */
+        .contact {
+            background: var(--white);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-details {
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        .contact-item i {
+            color: var(--gold);
+            font-size: 1.2rem;
+            width: 30px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--lavender), var(--blush));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px var(--shadow);
+        }
+
+        .social-links a:hover {
+            background: linear-gradient(135deg, var(--gold), #B8860B);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .contact-form {
+            background: linear-gradient(135deg, var(--lavender) 0%, var(--blush) 100%);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            background: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--gold), #B8860B);
+            color: var(--white);
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Form validation styles */
+        .form-group.error input,
+        .form-group.error textarea {
+            border-color: #ff6b6b;
+        }
+
+        .error-message {
+            color: #ff6b6b;
+            font-size: 0.85rem;
+            margin-top: 0.3rem;
+            display: none;
+        }
+
+        .form-group.error .error-message {
+            display: block;
+        }
+
+        /* =========================================
+           FOOTER
+           ========================================= */
+        footer {
+            background: linear-gradient(135deg, var(--text-dark) 0%, #1a1a1a 100%);
+            color: var(--white);
+            padding: 3rem 2rem 1rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #aaa;
+            text-decoration: none;
+            line-height: 2;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--gold);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* =========================================
+           RESPONSIVE DESIGN
+           ========================================= */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+                box-shadow: 0 5px 20px var(--shadow);
+                transform: translateY(-150%);
+                transition: transform 0.3s ease;
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .about-content,
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* =========================================
+           SCROLL ANIMATIONS
+           ========================================= */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Glow effect for special elements */
+        .glow {
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 5px var(--gold), 0 0 10px var(--gold);
+            }
+            to {
+                box-shadow: 0 0 20px var(--gold), 0 0 30px var(--gold);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sparkle Background Container -->
+    <div class="sparkles" id="sparkles"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-gift"></i>
+                Dream Aura Gifts
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Turning Moments into Magical Memories</h1>
+            <p>Discover the art of thoughtful gifting with our curated collection of personalized treasures</p>
+            <a href="#products" class="cta-button glow">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about fade-in" id="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Our Story</h3>
+                <p>Founded with a passion for spreading joy, Dream Aura Gifts began as a small workshop crafting personalized treasures for loved ones. Today, we've grown into a premium destination for those seeking meaningful connections through the art of gifting.</p>
+                <p>Our mission is simple yet profound: to transform everyday moments into magical memories through thoughtful, handcrafted gifts that speak from the heart. Every item in our collection is carefully curated to ensure it carries the warmth and love you wish to convey.</p>
+                <p>We believe that the best gifts aren't just objects—they're vessels of emotion, carefully wrapped expressions of love, gratitude, and celebration.</p>
+            </div>
+            <div class="about-image">
+                <img src="https://kimi-web-img.moonshot.cn/img/prod-bateel.gumlet.io/2584ce5568a0e51f6f6087626aa10bd8ef1945b8.jpg" alt="Elegant pastel gift boxes collection">
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products fade-in" id="products">
+        <h2 class="section-title">Our Collections</h2>
+        <p class="section-subtitle">Curated with love for every special moment</p>
+        
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://kimi-web-img.moonshot.cn/img/www.instantcustomboxes.com/a5e28e2430270c81a7525c92cda1d2a2d1d97622.webp" alt="Personalized Gifts">
+                    <span class="product-badge">Bestseller</span>
+                </div>
+                <div class="product-info">
+                    <h3>Personalized Gifts</h3>
+                    <p>Custom engraved keepsakes, monogrammed accessories, and photo memories crafted uniquely for your loved ones.</p>
+                    <div class="product-price">From $25</div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://kimi-web-img.moonshot.cn/img/ibexpackaging.com/ec466c1bc27bd67aee901abd6a1fd89042610dec.jpg" alt="Gift Boxes">
+                </div>
+                <div class="product-info">
+                    <h3>Curated Gift Boxes</h3>
+                    <p>Thoughtfully assembled surprise boxes filled with premium treats, self-care items, and delightful discoveries.</p>
+                    <div class="product-price">From $45</div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://kimi-web-img.moonshot.cn/img/www.halfbakedharvest.com/1fd0b1d4ff82d29e4f45fea92321a7614665847b.jpg" alt="Handmade Crafts">
+                    <span class="product-badge">Artisan</span>
+                </div>
+                <div class="product-info">
+                    <h3>Handmade Crafts</h3>
+                    <p>One-of-a-kind artisanal pieces including hand-poured candles, knitted treasures, and ceramic wonders.</p>
+                    <div class="product-price">From $35</div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://kimi-web-img.moonshot.cn/img/www.royalboxshop.com/287f198dfba50ffb0e548b8d6876de36abc78bae.jpg" alt="Special Occasions">
+                </div>
+                <div class="product-info">
+                    <h3>Special Occasions</h3>
+                    <p>Elegant wedding favors, anniversary surprises, birthday celebrations, and holiday treasures.</p>
+                    <div class="product-price">From $30</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery fade-in" id="gallery">
+        <h2 class="section-title">Gift Gallery</h2>
+        <p class="section-subtitle">A glimpse into our magical world</p>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://kimi-web-img.moonshot.cn/img/prod-bateel.gumlet.io/2584ce5568a0e51f6f6087626aa10bd8ef1945b8.jpg" alt="Luxury pastel gift set">
+                <div class="gallery-overlay">
+                    <h4>Pastel Elegance Collection</h4>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://kimi-web-img.moonshot.cn/img/giftboxmarket.com/1b4836cb39e1aad1f5a232e68ad840011c12600e.jpg" alt="Celestial gift wrapping">
+                <div class="gallery-overlay">
+                    <h4>Celestial Night Box</h4>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://kimi-web-img.moonshot.cn/img/www.shutterstock.com/a67d8e14c71e8c2616e79f43aa00b3d8104e515d.jpg" alt="Heart shaped gift box">
+                <div class="gallery-overlay">
+                    <h4>Love & Romance</h4>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://kimi-web-img.moonshot.cn/img/files.idyllic.app/e034a30162d4274e0ef545af4fec93401906f508" alt="Luxury purple boutique interior">
+                <div class="gallery-overlay">
+                    <h4>Our Boutique</h4>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://kimi-web-img.moonshot.cn/img/www.royalboxshop.com/287f198dfba50ffb0e548b8d6876de36abc78bae.jpg" alt="Purple gold leaf gift box">
+                <div class="gallery-overlay">
+                    <h4>Royal Purple Collection</h4>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://kimi-web-img.moonshot.cn/img/www.halfbakedharvest.com/1fd0b1d4ff82d29e4f45fea92321a7614665847b.jpg" alt="Artisan gift wrapping">
+                <div class="gallery-overlay">
+                    <h4>Handcrafted Wrapping</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials fade-in" id="testimonials">
+        <h2 class="section-title">What Our Customers Say</h2>
+        <p class="section-subtitle">Stories of joy and delight</p>
+        
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <p class="testimonial-text">The personalized anniversary box I ordered exceeded all expectations. The attention to detail and the quality of each item made my wife cry tears of joy. Truly magical!</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">JD</div>
+                    <div class="author-info">
+                        <h4>James Davidson</h4>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <p class="testimonial-text">Dream Aura Gifts has become my go-to for all special occasions. Their surprise boxes are curated with such care and creativity. Every delivery feels like Christmas morning!</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">SM</div>
+                    <div class="author-info">
+                        <h4>Sarah Mitchell</h4>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <p class="testimonial-text">I ordered wedding favors for my daughter's big day, and they were absolutely stunning. The lavender and gold theme matched perfectly. Our guests were enchanted!</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">EP</div>
+                    <div class="author-info">
+                        <h4>Elena Peterson</h4>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <p class="testimonial-text">The handmade candles smell divine and the packaging is eco-friendly yet luxurious. It's rare to find a brand that cares about both beauty and sustainability.</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">AC</div>
+                    <div class="author-info">
+                        <h4>Amanda Chen</h4>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <p class="testimonial-text">From customer service to delivery, everything was seamless. The gift arrived beautifully wrapped with a handwritten note. My best friend loved her birthday surprise!</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">RW</div>
+                    <div class="author-info">
+                        <h4>Rebecca Williams</h4>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact fade-in" id="contact">
+        <h2 class="section-title">Get in Touch</h2>
+        <p class="section-subtitle">Let's create something beautiful together</p>
+        
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Visit Our Boutique</h3>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>123 Dream Lane, Aura District<br>New York, NY 10001</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+1 (555) 123-4567</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>hello@dreamauragifts.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Mon - Sat: 10AM - 8PM<br>Sunday: 12PM - 6PM</span>
+                    </div>
+                </div>
+                
+                <h3>Follow Our Journey</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                    <span class="error-message">Please enter your name</span>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    <span class="error-message">Please enter a valid email</span>
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" placeholder="Tell us about your dream gift..." required></textarea>
+                    <span class="error-message">Please enter your message</span>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Dream Aura Gifts</h4>
+                <p>Turning moments into magical memories since 2020. We specialize in personalized, handcrafted gifts that speak from the heart.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#products">Shop</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Customer Care</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Returns & Exchanges</a></li>
+                    <li><a href="#">Gift Wrapping</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Track Order</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Newsletter</h4>
+                <p>Subscribe for exclusive offers and gifting inspiration.</p>
+                <form style="margin-top: 1rem;">
+                    <input type="email" placeholder="Your email" style="padding: 0.8rem; border-radius: 5px; border: none; width: 100%; margin-bottom: 0.5rem;">
+                    <button type="button" style="padding: 0.8rem; background: var(--gold); color: var(--white); border: none; border-radius: 5px; cursor: pointer; width: 100%;">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Dream Aura Gifts. All rights reserved. | Made with <i class="fas fa-heart" style="color: var(--blush-deep);"></i> and magic</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // =========================================
+        // SPARKLE EFFECT GENERATOR
+        // =========================================
+        function createSparkles() {
+            const container = document.getElementById('sparkles');
+            const sparkleCount = 30;
+            
+            for (let i = 0; i < sparkleCount; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                sparkle.style.left = Math.random() * 100 + '%';
+                sparkle.style.top = Math.random() * 100 + '%';
+                sparkle.style.animationDelay = Math.random() * 3 + 's';
+                sparkle.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                container.appendChild(sparkle);
+            }
+        }
+
+        // =========================================
+        // MOBILE MENU TOGGLE
+        // =========================================
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileMenuToggle.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuToggle.querySelector('i').classList.remove('fa-times');
+                mobileMenuToggle.querySelector('i').classList.add('fa-bars');
+            });
+        });
+
+        // =========================================
+        // NAVBAR SCROLL EFFECT
+        // =========================================
+        const navbar = document.getElementById('navbar');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                navbar.style.boxShadow = '0 2px 30px rgba(0,0,0,0.1)';
+            } else {
+                navbar.style.boxShadow = '0 2px 20px var(--shadow)';
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // =========================================
+        // SCROLL ANIMATIONS (FADE IN)
+        // =========================================
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // =========================================
+        // FORM VALIDATION
+        // =========================================
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            let isValid = true;
+            const name = document.getElementById('name');
+            const email = document.getElementById('email');
+            const message = document.getElementById('message');
+            
+            // Reset errors
+            document.querySelectorAll('.form-group').forEach(group => {
+                group.classList.remove('error');
+            });
+            
+            // Validate name
+            if (name.value.trim().length < 2) {
+                name.parentElement.classList.add('error');
+                isValid = false;
+            }
+            
+            // Validate email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email.value.trim())) {
+                email.parentElement.classList.add('error');
+                isValid = false;
+            }
+            
+            // Validate message
+            if (message.value.trim().length < 10) {
+                message.parentElement.classList.add('error');
+                isValid = false;
+            }
+            
+            if (isValid) {
+                // Show success message
+                const btn = contactForm.querySelector('.submit-btn');
+                const originalText = btn.textContent;
+                btn.textContent = 'Message Sent Successfully!';
+                btn.style.background = '#4CAF50';
+                
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.style.background = '';
+                    contactForm.reset();
+                }, 3000);
+            }
+        });
+
+        // Real-time validation feedback
+        ['name', 'email', 'message'].forEach(fieldId => {
+            const field = document.getElementById(fieldId);
+            field.addEventListener('input', () => {
+                field.parentElement.classList.remove('error');
+            });
+        });
+
+        // =========================================
+        // SMOOTH SCROLLING FOR ANCHOR LINKS
+        // =========================================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // =========================================
+        // INITIALIZE
+        // =========================================
+        document.addEventListener('DOMContentLoaded', () => {
+            createSparkles();
+        });
+
+        // Add parallax effect to hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+    </script>
+</body>
+</html>
